@@ -1,0 +1,31 @@
+{% extends "polls/base.html"  %}
+
+{% block content %}
+<main class="wrap">
+
+      <section class="news">
+        <h2>My News</h2>
+        {% if news %}
+        <dl>
+          {% for news in news %}
+            <dt>{{ news.date }}</dt>
+            <dd>{{ news.title }}</dd>
+          {% endfor %}
+        </dl>
+        {% else %}
+        <p class="temporary">工事中です。しばらくお待ちください。</p>
+        {% endif %}
+      </section>
+      
+      <section class="photo">
+        <h2>Photo of the month</h2>
+        {% if new_photo %}
+          <img src="{{ new_photo.image.url }}" alt="{{ new_photo.title }}">
+    
+        {% else %}
+          <p class="temporary">工事中です。しばらくお待ちください。</p>
+        {% endif %}
+      </section>
+
+  </main>
+{% endblock %}

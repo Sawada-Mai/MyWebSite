@@ -1,0 +1,30 @@
+{% extends "polls/base.html"  %}
+
+{% block content %}
+<main>
+    <h2 class="all_gallery">development</h2>
+
+    {% if portfolio %}
+    <ul>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for portfolio in portfolio %}
+            <div class="col">
+                <div class="card text-dark w-50 border-info mb-3" style="width: 18rem;">
+                    <img src="{{ portfolio.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ portfolio.date }}</h5>
+                    <p class="card-text">{{ portfolio.title }}</p>
+                    <a href="{% url 'portfolio_details' portfolio.id %}" class="btn btn-primary">詳細ページへ</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </ul>
+
+    {% else %}
+    <p class="temporary">工事中です。しばらくお待ちください。</p>
+    {% endif %}
+</main>
+{% endblock %}

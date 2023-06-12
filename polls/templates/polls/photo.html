@@ -1,0 +1,20 @@
+{% extends "polls/base.html"  %}
+
+{% block content %}
+<main>
+    <h2 class="all_gallery">Photo Gallery</h2>
+
+    {% if photo %}
+
+      <ul class="gallery">
+          {% for photo in photo %}
+            <li><a href="{{ photo.image.url }}" data-lightbox="1"><img src="{{ photo.image.url }}" alt="photo"></a></li>
+          {% endfor %}
+      </ul>
+
+    {% else %}
+    <p class="temporary">工事中です。しばらくお待ちください。</p>
+
+    {% endif %}
+</main>
+{% endblock %}

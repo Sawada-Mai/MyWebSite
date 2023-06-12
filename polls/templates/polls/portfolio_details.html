@@ -1,0 +1,12 @@
+{% extends "polls/base.html"  %}
+
+{% block content %}
+{{ portfolio.title }}<br>
+<img src="{{ portfolio.image.url }}" style="width: 400px;">
+<ul>
+    <li>{{ portfolio.detail }}</li>
+    <li>{{ portfolio.text1 }}</li>
+    <li>{{ portfolio.text2 }}</li>
+</ul>
+<a href="/polls/portfolio/" target="_parent">一覧に戻る</a>
+{% endblock %}

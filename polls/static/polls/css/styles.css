@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/* Header start */
+header{
+  background-image: url(../images/night.jpg);
+  background-size: cover;
+  height: 350px;
+  text-align: center;
+}
+header{
+  align-items: center;
+  margin: auto;
+}
+header a{
+  color: #ffffff;
+  text-decoration: none;
+}
+header nav ul{
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin: auto;
+}
+header a{
+  margin: 20px;
+  text-decoration: none;
+  color: #ffffff;
+}
+header a:hover
+{
+  color: #c9c9c9;
+}
+header h1{ /*my home の文字*/
+  font-family: 'Cedarville Cursive', cursive;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 60px;
+}
+/* Header end */
+
+
+/* 全ページ共通 */
+.back{
+  background-color: rgb(1, 13, 29);
+  color: #f9f9f5;
+}
+h2{
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f9f9f5;
+}
+/* end */
+
+
+.all_gallery{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.photo h2,
+.develop h2,
+.news h2{
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.news,
+.photo{
+  min-height: 200px;
+}
+
+.photo img{
+  display: block;
+  margin: 20px auto;
+  max-width: 400px;
+  width: 80%;
+}
+
+
+footer{
+  background-color: rgb(68, 72, 96);
+  height: 30px;
+  color: #ffffff;
+  margin-bottom: 0px;
+  text-align: end;
+}
+
+.temporary{
+  text-align: center;
+}
+
+
+
+
+/* responsive */
+@media (max-width: 600px){
+  html{
+    font-size: 87.5%;
+  }
+  .header h1{
+    font-size: 30px;
+  }
+  .photo h2{
+    margin: auto;
+  }
+}
+
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+.gallery{
+columns: 3;/*段組みの数*/
+margin-top: 30px;
+margin-bottom: 30px;
+/*ギャラリー左右に余白をつける*/
+padding:0 15px;
+}
+
+.gallery li {
+  margin-bottom: 25px;/*各画像に余白をつける*/
+}
+
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img{
+  width:100%;
+  height:auto;
+  vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
+
+/*横幅900px以下の段組み設定*/
+@media only screen and (max-width: 900px) {
+  .gallery{
+  columns:3;
+  } 
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery{
+  columns: 2;
+  } 
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+/*画像を出現させるアニメーションCSS*/
+
+.flipLeft{
+animation-name: flipLeft;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+perspective-origin: left center;
+opacity: 0;
+}
+
+@keyframes flipLeft{
+  from {
+   transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+  opacity: 0;
+  }
+
+  to {
+  transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+  }
+}
+
+  
